@@ -1,0 +1,21 @@
+  <h1>Bienvenido a nuestro Bitly!</h1>
+  <p>Esta es una simulacion de Bitly</p>
+ <!--  Creas la forma para obtener la informacion del usuario -->
+  <form action="/urls" method="post">
+    Introduce tu url: 
+    <br>
+    <input type="text" name="user_url">
+    <input type="submit" value="Submit">
+  </form>  
+
+
+  <div>
+    <% if @urls %>
+       <% @urls.each do |url| %>
+         <br>
+         <a href="/long_url/<%= url.short_url %>"><%= "http://#{url.short_url}" %> </a>
+       </br>
+       <% end  %> 
+    <% end %>
+  </div>
+
